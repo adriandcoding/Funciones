@@ -10,7 +10,7 @@ function resetear() {
   turnoActual = 1;
   Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
 }
-function turnoAnterior() {
+function turnoAnterior(){
   if (turnoActual > 1) {
     turnoActual--;
     Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
@@ -20,9 +20,9 @@ function turnoSiguiente() {
   turnoActual++;
   Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
 }
-function escribirTurno() {
+const escribirTurno=() =>
   Numero_actual.innerHTML = Introducir_numero.value;
-}
+
 
 Turno_anterior.addEventListener("click", turnoAnterior);
 Resetear_botón.addEventListener("click", resetear);
