@@ -9,9 +9,27 @@
   </head>
   <body>
     <div class="turno-display">
-      <h1 class="numero-turno">01</h1>
+      <h1 id="contador" class="numero-turno">01</h1>
       <p class="texto-turno">Por favor, acérquese al mostrador</p>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    <nav class="botones">
+      <div class="turnoanterior">
+        <button class="boton-anterior">Anterior</button>
+      </div>
+      <div class="boton-reset">
+        <button class="boton-reset">Resetear</button>
+      </div>
+      <div class="turnosiguiente">
+        <button class="boton-siguiente">Siguiente</button>
+      </div>
+    </nav>
+    <div class="formulario-turno">
+      <form class="formulario">
+        <label for="introducir-turno">INTRODUCE EL TURNO DESEADO </label>
+        <input type="" id="introducir_turno" />
+        <button class="boton-enviar">Enviar</button>
+      </form>
+    </div>
+    <script src="./src/main.ts"></script>
   </body>
 </html>
