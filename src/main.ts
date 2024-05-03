@@ -21,7 +21,7 @@ function resetear(): void {
     numeroActual.innerHTML=turnoActual.toString().padStart(2, "0");
   }
 }
-function turnoAnterior(): void {
+function turnoAnterior2(): void {
   if (
     turnoActual > 1 &&
     numeroActual !== null &&
@@ -59,7 +59,7 @@ if (
   turnoAnterior !== undefined &&
   turnoAnterior instanceof HTMLButtonElement
 ) {
-  turnoAnterior.addEventListener("click", turnoAnterior);
+  turnoAnterior.addEventListener("click", turnoAnterior2);
 }
 
 if (
