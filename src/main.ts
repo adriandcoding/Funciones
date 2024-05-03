@@ -1,6 +1,6 @@
 //leer los inputs, botones y crear variables
 
-const numeroActual = document.querySelector(".numero-turno")!;
+const numeroActual = document.querySelector(".numero-turno");
 const Turno_anterior = document.querySelector(".boton-anterior");
 const Resetear_botón = document.querySelector(".boton-reset");
 const Boton_siguiente = document.querySelector(".boton-siguiente");
@@ -11,13 +11,14 @@ let turnoActual = 1;
 
 // funciones
 function resetear(): void {
+  
   if (
     numeroActual !== null &&
     numeroActual !== undefined &&
     numeroActual instanceof HTMLHeadingElement
   ) {
-    turnoActual = 1;
-    numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
+    turnoActual=1
+    numeroActual.innerHTML=turnoActual.toString().padStart(2, "0");
   }
 }
 function turnoAnterior(): void {
@@ -42,8 +43,14 @@ function turnoSiguiente(): void {
   }
 }
 function escribirTurno(): void {
-  turnoActual = parseInt((Introducir_numero as HTMLInputElement).value);
-  numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
+  if (
+    numeroActual !== null &&
+    numeroActual !== undefined &&
+    numeroActual instanceof HTMLHeadingElement
+  ) {
+    turnoActual = parseInt((Introducir_numero as HTMLInputElement).value);
+    numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
+  }
 }
 // aplicando funciones
 
