@@ -1,52 +1,78 @@
 //leer los inputs, botones y crear variables
 
-const Numero_actual = document.querySelector(".numero-turno");
+const numeroActual = document.querySelector(".numero-turno")!;
 const Turno_anterior = document.querySelector(".boton-anterior");
 const Resetear_botón = document.querySelector(".boton-reset");
 const Boton_siguiente = document.querySelector(".boton-siguiente");
 const Introducir_numero = document.querySelector("#introducir_turno");
 const Boton_enviar = document.querySelector(".boton-enviar");
 
-let turnoActual = 1
+let turnoActual = 1;
 
 // funciones
 function resetear(): void {
   if (
-    Turno_anterior !== null &&
-    Turno_anterior !== undefined &&
-    Turno_anterior instanceof HTMLButtonElement
+    numeroActual !== null &&
+    numeroActual !== undefined &&
+    numeroActual instanceof HTMLHeadingElement
   ) {
-    Turno_anterior.addEventListener("click", turnoAnterior);
+    turnoActual = 1;
+    numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
   }
-  turnoActual = 1;
-  Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
 }
 function turnoAnterior(): void {
-  if (turnoActual > 1) {
+  if (
+    turnoActual > 1 &&
+    numeroActual !== null &&
+    numeroActual !== undefined &&
+    numeroActual instanceof HTMLHeadingElement
+  ) {
     turnoActual--;
-    Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
+    numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
   }
 }
 function turnoSiguiente(): void {
-  turnoActual++;
-  Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
+  if (
+    numeroActual !== null &&
+    numeroActual !== undefined &&
+    numeroActual instanceof HTMLHeadingElement
+  ) {
+    turnoActual++;
+    numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
+  }
 }
 function escribirTurno(): void {
   turnoActual = parseInt((Introducir_numero as HTMLInputElement).value);
-  Numero_actual.innerHTML = turnoActual.toString().padStart(2, "0");
+  numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
 }
 // aplicando funciones
 
-if (Turno_anterior != null && Turno_anterior != undefined) {
+if (
+  Turno_anterior !== null &&
+  Turno_anterior !== undefined &&
+  Turno_anterior instanceof HTMLButtonElement
+) {
   Turno_anterior.addEventListener("click", turnoAnterior);
 }
 
-if (Boton_siguiente != null && Boton_siguiente != undefined) {
+if (
+  Boton_siguiente !== null &&
+  Boton_siguiente !== undefined &&
+  Boton_siguiente instanceof HTMLButtonElement
+) {
   Boton_siguiente.addEventListener("click", turnoSiguiente);
 }
-if (Resetear_botón != null && Resetear_botón != undefined) {
+if (
+  Resetear_botón !== null &&
+  Resetear_botón !== undefined &&
+  Resetear_botón instanceof HTMLButtonElement
+) {
   Resetear_botón.addEventListener("click", resetear);
 }
-if (Boton_enviar != null && Boton_enviar != undefined) {
+if (
+  Boton_enviar !== null &&
+  Boton_enviar !== undefined &&
+  Boton_enviar instanceof HTMLButtonElement
+) {
   Boton_enviar.addEventListener("click", escribirTurno);
 }
