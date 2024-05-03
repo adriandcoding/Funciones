@@ -92,6 +92,17 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 input {
   width: 150px;
@@ -108,17 +119,7 @@ label {
 }
 
 .formulario {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: rgb(0, 0, 0);
-  background-color: #ffffff;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+ 
 }
 .boton-siguiente:hover {
   background-color: #0c8e15;
