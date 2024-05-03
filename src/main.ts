@@ -1,11 +1,11 @@
 //leer los inputs, botones y crear variables
 
 const numeroActual = document.querySelector(".numero-turno");
-const Turno_anterior = document.querySelector(".boton-anterior");
-const Resetear_botón = document.querySelector(".boton-reset");
-const Boton_siguiente = document.querySelector(".boton-siguiente");
-const Introducir_numero = document.querySelector("#introducir_turno");
-const Boton_enviar = document.querySelector(".boton-enviar");
+const turnoAnterior = document.querySelector(".boton-anterior");
+const resetearBoton = document.querySelector(".boton-reset");
+const botonSiguiente = document.querySelector(".boton-siguiente");
+const introducirNumero = document.querySelector("#introducir_turno");
+const botonEnviar = document.querySelector(".boton-enviar");
 
 let turnoActual = 1;
 
@@ -48,38 +48,38 @@ function escribirTurno(): void {
     numeroActual !== undefined &&
     numeroActual instanceof HTMLHeadingElement
   ) {
-    turnoActual = parseInt((Introducir_numero as HTMLInputElement).value);
+    turnoActual = parseInt((introducirNumero as HTMLInputElement).value);
     numeroActual.innerHTML = turnoActual.toString().padStart(2, "0");
   }
 }
 // aplicando funciones
 
 if (
-  Turno_anterior !== null &&
-  Turno_anterior !== undefined &&
-  Turno_anterior instanceof HTMLButtonElement
+  turnoAnterior !== null &&
+  turnoAnterior !== undefined &&
+  turnoAnterior instanceof HTMLButtonElement
 ) {
-  Turno_anterior.addEventListener("click", turnoAnterior);
+  turnoAnterior.addEventListener("click", turnoAnterior);
 }
 
 if (
-  Boton_siguiente !== null &&
-  Boton_siguiente !== undefined &&
-  Boton_siguiente instanceof HTMLButtonElement
+  botonSiguiente !== null &&
+  botonSiguiente !== undefined &&
+  botonSiguiente instanceof HTMLButtonElement
 ) {
-  Boton_siguiente.addEventListener("click", turnoSiguiente);
+  botonSiguiente.addEventListener("click", turnoSiguiente);
 }
 if (
-  Resetear_botón !== null &&
-  Resetear_botón !== undefined &&
-  Resetear_botón instanceof HTMLButtonElement
+  resetearBoton !== null &&
+  resetearBoton !== undefined &&
+  resetearBoton instanceof HTMLButtonElement
 ) {
-  Resetear_botón.addEventListener("click", resetear);
+  resetearBoton.addEventListener("click", resetear);
 }
 if (
-  Boton_enviar !== null &&
-  Boton_enviar !== undefined &&
-  Boton_enviar instanceof HTMLButtonElement
+  botonEnviar !== null &&
+  botonEnviar !== undefined &&
+  botonEnviar instanceof HTMLButtonElement
 ) {
-  Boton_enviar.addEventListener("click", escribirTurno);
+  botonEnviar.addEventListener("click", escribirTurno);
 }
